@@ -1,5 +1,5 @@
 package com.blog.my_blog.service;
 
-public class PostService {
-    
-}
+public interface PostService {
+    void createPost();
+} 

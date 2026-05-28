@@ -1,4 +1,4 @@
 create table TAGS (
-    ID int not null,
-    Name varchar unique 
+    id UUID PRIMARY KEY NOT NULL,
+    name VARCHAR(64)  NOT NULL UNIQUE 
 );
