@@ -1,5 +1,14 @@
 package com.blog.my_blog.repository;
 
-public class UserRepository {
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.blog.my_blog.entity.User;
+
+@Repository
+public interface UserRepository extends JpaRepository<User , UUID> {
+
     
-}
+} 
