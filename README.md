@@ -1,20 +1,20 @@
 # My Blog — Spring Boot REST API
 
-A production-ready blog REST API built with **Spring Boot**, following a clean **3-tier layered architecture** (Presentation → Business → Data Access).
+Blog REST API built with **Spring Boot**, following a clean **3-tier layered architecture** (Presentation → Business → Data Access).
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | Spring Boot 4 |
-| Persistence | Spring Data JPA + Hibernate |
-| Database (dev) | H2 (in-memory) |
-| Database (prod) | PostgreSQL |
-| Migrations | Flyway (prod profile) |
-| Validation | Jakarta Bean Validation |
-| Build | Maven |
+| Layer           | Technology                  |
+| --------------- | --------------------------- |
+| Framework       | Spring Boot 4               |
+| Persistence     | Spring Data JPA + Hibernate |
+| Database (dev)  | H2 (in-memory)              |
+| Database (prod) | PostgreSQL                  |
+| Migrations      | Flyway (prod profile)       |
+| Validation      | Jakarta Bean Validation     |
+| Build           | Maven                       |
 
 ---
 
@@ -59,42 +59,47 @@ users ──< posts >──< post_tags >── tags
 ## API Endpoints
 
 ### Auth
-| Method | Path | Description |
-|---|---|---|
+
+| Method | Path              | Description                 |
+| ------ | ----------------- | --------------------------- |
 | `POST` | `/api/auth/login` | Login (returns dummy token) |
 
 ### Users
-| Method | Path | Description |
-|---|---|---|
-| `POST` | `/api/users` | Create user |
-| `GET` | `/api/users` | List all users |
-| `GET` | `/api/users/{id}` | Get user by ID |
-| `DELETE` | `/api/users/{id}` | Delete user |
+
+| Method   | Path              | Description    |
+| -------- | ----------------- | -------------- |
+| `POST`   | `/api/users`      | Create user    |
+| `GET`    | `/api/users`      | List all users |
+| `GET`    | `/api/users/{id}` | Get user by ID |
+| `DELETE` | `/api/users/{id}` | Delete user    |
 
 ### Posts
-| Method | Path | Description |
-|---|---|---|
-| `POST` | `/api/posts` | Create post |
-| `GET` | `/api/posts` | List all posts (or `?authorId=uuid` to filter) |
-| `GET` | `/api/posts/{id}` | Get post by ID |
-| `PUT` | `/api/posts/{id}` | Update post |
-| `DELETE` | `/api/posts/{id}` | Delete post |
+
+| Method   | Path              | Description                                    |
+| -------- | ----------------- | ---------------------------------------------- |
+| `POST`   | `/api/posts`      | Create post                                    |
+| `GET`    | `/api/posts`      | List all posts (or `?authorId=uuid` to filter) |
+| `GET`    | `/api/posts/{id}` | Get post by ID                                 |
+| `PUT`    | `/api/posts/{id}` | Update post                                    |
+| `DELETE` | `/api/posts/{id}` | Delete post                                    |
 
 ### Comments
-| Method | Path | Description |
-|---|---|---|
-| `POST` | `/api/comments` | Create comment |
-| `GET` | `/api/comments?postId=uuid` | Get comments for a post |
-| `GET` | `/api/comments/{id}` | Get comment by ID |
-| `DELETE` | `/api/comments/{id}` | Delete comment |
+
+| Method   | Path                        | Description             |
+| -------- | --------------------------- | ----------------------- |
+| `POST`   | `/api/comments`             | Create comment          |
+| `GET`    | `/api/comments?postId=uuid` | Get comments for a post |
+| `GET`    | `/api/comments/{id}`        | Get comment by ID       |
+| `DELETE` | `/api/comments/{id}`        | Delete comment          |
 
 ### Tags
-| Method | Path | Description |
-|---|---|---|
-| `POST` | `/api/tags` | Create tag |
-| `GET` | `/api/tags` | List all tags |
-| `GET` | `/api/tags/{id}` | Get tag by ID |
-| `DELETE` | `/api/tags/{id}` | Delete tag |
+
+| Method   | Path             | Description   |
+| -------- | ---------------- | ------------- |
+| `POST`   | `/api/tags`      | Create tag    |
+| `GET`    | `/api/tags`      | List all tags |
+| `GET`    | `/api/tags/{id}` | Get tag by ID |
+| `DELETE` | `/api/tags/{id}` | Delete tag    |
 
 ---
 
@@ -131,6 +136,7 @@ Flyway will automatically run migrations from `src/main/resources/db/migration/`
 ## Example Request
 
 **Create a user:**
+
 ```bash
 curl -X POST http://localhost:8080/api/users \
   -H "Content-Type: application/json" \
@@ -138,6 +144,7 @@ curl -X POST http://localhost:8080/api/users \
 ```
 
 **Create a post:**
+
 ```bash
 curl -X POST http://localhost:8080/api/posts \
   -H "Content-Type: application/json" \
