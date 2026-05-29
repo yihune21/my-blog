@@ -10,18 +10,23 @@ import com.blog.my_blog.service.UserService;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImpl implements UserService {
-       
+
        private final UserRepository userRepository;
        private final UserMapper userMapper;
+       private final PasswordEncoder passwordEncoder;
 
-       public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
+       public UserServiceImpl(UserRepository userRepository,
+                              UserMapper userMapper,
+                              PasswordEncoder passwordEncoder) {
               this.userRepository = userRepository;
               this.userMapper = userMapper;
+              this.passwordEncoder = passwordEncoder;
        }
 
        @Override
@@ -38,7 +43,7 @@ public class UserServiceImpl implements UserService {
                   null,
                   request.username(),
                   request.email(),
-                  request.password(), // In a real application, encrypt this!
+                  passwordEncoder.encode(request.password()),
                   request.role(),
                   null
               );

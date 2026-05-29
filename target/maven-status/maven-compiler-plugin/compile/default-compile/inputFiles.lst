@@ -32,6 +32,8 @@
 /home/noone/Desktop/projects/my-blog/src/main/java/com/blog/my_blog/repository/PostRepository.java
 /home/noone/Desktop/projects/my-blog/src/main/java/com/blog/my_blog/repository/TagsRepository.java
 /home/noone/Desktop/projects/my-blog/src/main/java/com/blog/my_blog/repository/UserRepository.java
+/home/noone/Desktop/projects/my-blog/src/main/java/com/blog/my_blog/security/JwtAuthFilter.java
+/home/noone/Desktop/projects/my-blog/src/main/java/com/blog/my_blog/security/JwtService.java
 /home/noone/Desktop/projects/my-blog/src/main/java/com/blog/my_blog/service/CommentService.java
 /home/noone/Desktop/projects/my-blog/src/main/java/com/blog/my_blog/service/PostService.java
 /home/noone/Desktop/projects/my-blog/src/main/java/com/blog/my_blog/service/TagService.java
